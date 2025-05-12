@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
 
 @RestController
 @RequestMapping("/api/echelonnements")

@@ -11,7 +11,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000") // ⚠️ Autorise les requêtes depuis React
+@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+ // ⚠️ Autorise les requêtes depuis React
 
 public class FileUploadController {
 

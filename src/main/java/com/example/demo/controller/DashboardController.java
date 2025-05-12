@@ -13,12 +13,15 @@ import com.example.demo.service.RecouvrementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 @RequestMapping("/api/dashboard")
+@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+
 @RestController
 public class DashboardController {
 

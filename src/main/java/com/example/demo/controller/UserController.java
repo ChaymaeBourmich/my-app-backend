@@ -24,7 +24,8 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+
 public class UserController {
 
     @Autowired

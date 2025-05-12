@@ -21,7 +21,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/paiements")
-@CrossOrigin(origins = "http://localhost:3000") // Autorise le frontend React
+@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+ // Autorise le frontend React
 public class PaiementController {
 
     private final PaiementService paiementService;

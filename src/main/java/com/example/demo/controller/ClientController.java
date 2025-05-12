@@ -12,6 +12,8 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/clients")
+@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+
 public class ClientController {
 
     @Autowired

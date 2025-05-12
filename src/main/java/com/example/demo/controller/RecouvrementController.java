@@ -16,7 +16,8 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/")
-@CrossOrigin(origins = "http://localhost:3000") // Permettre les requêtes depuis le frontend React
+@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+// Permettre les requêtes depuis le frontend React
 public class RecouvrementController {
 
     @Autowired
