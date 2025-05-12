@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 @RequestMapping("/api/dashboard")
-@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+@CrossOrigin(origins = "https://my-app-frontend-beta.vercel.app")
 
 @RestController
 public class DashboardController {

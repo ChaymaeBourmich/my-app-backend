@@ -24,7 +24,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+@CrossOrigin(origins = "https://my-app-frontend-beta.vercel.app")
 
 public class UserController {
 

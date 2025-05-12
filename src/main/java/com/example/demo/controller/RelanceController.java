@@ -24,7 +24,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/relances")
-@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+@CrossOrigin(origins = "https://my-app-frontend-beta.vercel.app")
 // Autorise le frontend React
 
 public class RelanceController {

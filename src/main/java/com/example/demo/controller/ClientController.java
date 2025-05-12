@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/clients")
-@CrossOrigin(origins = "https://my-app-frontend-cq7c.vercel.app")
+@CrossOrigin(origins = "https://my-app-frontend-beta.vercel.app")
 
 public class ClientController {
 
