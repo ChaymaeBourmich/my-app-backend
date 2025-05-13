@@ -45,7 +45,7 @@ public class SecurityConfig {
                 .and()
                 .cors(cors -> cors.configurationSource(request -> {
                     CorsConfiguration config = new CorsConfiguration();
-                    config.setAllowedOrigins(List.of("https://my-app-frontend-beta.vercel.app")); // ⚠️ frontend ngrok ici
+                    config.setAllowedOriginPatterns(List.of("*")); // ✅ Autorise tout
                     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     config.setAllowedHeaders(List.of("*"));
                     config.setAllowCredentials(true); // autorise les cookies avec Basic Auth
