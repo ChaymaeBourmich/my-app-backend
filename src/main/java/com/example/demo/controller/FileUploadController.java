@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://my-app-frontend-beta.vercel.app")
  // ⚠️ Autorise les requêtes depuis React
 
 public class FileUploadController {
@@ -40,8 +39,9 @@ public class FileUploadController {
 
 
     // ✅ Nouveau endpoint pour importer le fichier SRG
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/upload-srg")
+    @PreAuthorize("hasRole('ADMIN')")
+
     public ResponseEntity<?> uploadSrgFile(@RequestParam("file") MultipartFile file) {
         if (file.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Aucun fichier sélectionné.");

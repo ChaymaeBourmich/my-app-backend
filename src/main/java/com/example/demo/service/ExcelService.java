@@ -12,8 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Optional;
@@ -75,7 +73,7 @@ public class ExcelService {
         workbook.close();
 
         // Exécuter automatiquement SSIS après l'importation
-        callFlaskToRunSSISAppel();
+        runSSISPackage();
     }
 
     // ✅ Correction de la méthode pour exécuter SSIS
@@ -182,7 +180,7 @@ public class ExcelService {
 
         workbook.close();
         // ✅ Exécuter le package SRG après l’import
-        callFlaskToRunSSISSRG();
+        runSRGPackage();
         System.out.println("✅ Fichier SRG importé et package exécuté avec succès !");
     }
 
@@ -283,63 +281,6 @@ public class ExcelService {
                 return "";
         }
     }
-
-    public void callFlaskToRunSSISAppel() {
-        callFlask("https://1d1b-105-74-3-116.ngrok-free.app/run-ssis-appel");
-    }
-
-    public void callFlaskToRunSSISSRG() {
-        callFlask("https://1d1b-105-74-3-116.ngrok-free.app/run-ssis-srg");
-    }
-
-    private void callFlask(String url) {
-        try {
-            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-            connection.setRequestMethod("POST");
-            connection.setDoOutput(true);
-            connection.getOutputStream().write(new byte[0]);
-
-            int responseCode = connection.getResponseCode();
-            if (responseCode == 200) {
-                System.out.println("✅ Package exécuté via Flask !");
-            } else {
-                System.err.println("❌ Code HTTP : " + responseCode);
-            }
-
-            connection.disconnect();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-
-
-    public void callFlaskToRunSSIS() {
-        try {
-            String flaskApiUrl = "http://192.168.0.171:5005/run-ssis";
-
-            HttpURLConnection connection = (HttpURLConnection) new URL(flaskApiUrl).openConnection();
-            connection.setRequestMethod("POST");
-            connection.setDoOutput(true); // On veut faire un POST même sans body
-            connection.getOutputStream().write(new byte[0]);
-
-            int responseCode = connection.getResponseCode();
-
-            if (responseCode == 200) {
-                System.out.println("✅ Package exécuté via Flask avec succès !");
-            } else {
-                System.err.println("❌ Échec de l’exécution. Code HTTP : " + responseCode);
-            }
-
-            connection.disconnect();
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println("❌ Erreur lors de l’appel à Flask");
-        }
-    }
-
 
 
 }
